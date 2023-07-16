@@ -1,12 +1,6 @@
 public class LuhnAlgorithm {
 
-    public static void main(String[] args) {
-        String number = new LuhnAlgorithm().makeCheckDigit("553691402262641");
-        System.out.println(number);
-        System.out.println(new LuhnAlgorithm().verifyCheckDigit(number));
-    }
-
-    public String makeCheckDigit(String seqNumbers) {
+    public String makeCheckSum(String seqNumbers) {
 
         int[] numbersToSave = fillArray(seqNumbers, false);
         int[] numbers = fillArray(seqNumbers, false);
@@ -32,7 +26,7 @@ public class LuhnAlgorithm {
         return seqToString(numbersToSave);
     }
 
-    public boolean verifyCheckDigit(String numberWithCheckDigit) {
+    public boolean verifyCheckSum(String numberWithCheckDigit) {
         int[] numbers = fillArray(numberWithCheckDigit, true);
 
         if (((numbers.length - 1) % 2) == 0) {
